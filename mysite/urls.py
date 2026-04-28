@@ -15,8 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic.base import RedirectView # أضف هذا السطر
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+
+# هذا السطر سيقوم بتحويل أي شخص يفتح الصفحة الرئيسية إلى صفحة اللوجن فوراً
+    path('', RedirectView.as_view(url='accounts/login/', permanent=False), name='index'),
+
 ]
