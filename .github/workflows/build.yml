@@ -5,12 +5,16 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
+
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Run a build script
-        run: |
-          echo "Building the project..."
-          docker compose build
+
+      - name: Set up Docker
+        run: docker --version
+
+      - name: Build Docker image
+        run: docker build -t my_CI_django .
