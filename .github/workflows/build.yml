@@ -17,4 +17,4 @@ jobs:
         run: docker --version
 
       - name: Build Docker image
-        run: docker build -t my_CI_django .
+        run: docker build -t my_ci_django .
