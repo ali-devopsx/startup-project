@@ -26,7 +26,7 @@ docker compose up --build
 
 ## 🌍 Live Demo
 
-https://your-app.up.railway.app
+https://ali-mahmoud.up.railway.app/accounts/login/
 
 ## 📦 CI/CD
 
